@@ -1,0 +1,258 @@
+/* Base styles */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #4a4a4a;
+  --accent-color: #3b82f6;
+  --background-color: #ffffff;
+  --text-color: #1a1a1a;
+  --text-light: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.primary-button:hover {
+  background-color: #f3f4f6;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Features Section */
+.features {
+  padding: 6rem 1rem;
+  background-color: white;
+}
+
+.features-header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+
+.features h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.features-header p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.feature-card:hover {
+  background-color: #f3f4f6;
+}
+
+.feature-icon {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-light);
+}
+
+/* CTA Section */
+.cta {
+  background-color: var(--primary-color);
+  padding: 4rem 1rem;
+}
+
+.cta-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta h2 {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: #9ca3af;
+  max-width: 36rem;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 3rem 1rem;
+}
+
+.footer-content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: var(--text-color);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cta-content {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
